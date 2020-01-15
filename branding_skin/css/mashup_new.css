@@ -13,6 +13,7 @@
    07. 12/27/2018 SBC, to fix the lost CCSU-specific color styling for iframeHeaderContent input.requestOption
    08. 01/14/2019 SBC, to add some styling to better highlight the stack and call numbers
    09. 01/15/2020 SBC, to fix up for AFN per work with KF on styling - wanting Request from CT Colleges & Universities, line break, then ILLiad as just a link
+   10. 01/15/2020 SBC, test to remove "Request options" iframe header label since the button is removed now
 */ 
 
 /* Request Link 
@@ -96,7 +97,10 @@ input#openRSRequest1::before{
   white-space: pre;  
   content: '<br>';
 }
-
+/* test to remove "Request options" iframe header label since the button is removed now - 1/15/20 SBC */
+.iframeHeaderContent>em{
+  display: none;
+}
 /* Request Form
    ExL forces the action buttons to the far right.  This is dumb, and we undo it. 
    Selection-Rule copied from line 1101, and CSS modified to not play games with the margin.
