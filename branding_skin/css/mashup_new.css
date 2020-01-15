@@ -98,8 +98,8 @@ input#openRSRequest1::before{
   content: '<br>';
 }
 /* test to remove "Request options" iframe header label since the button is removed now - 1/15/20 SBC */
-.iframeHeaderContent>em{
-  display: none;
+.iframeHeader.getit.iframeHeaderContent{
+  display: none !important;
   margin: 0px;
   padding: 0px;
 }
