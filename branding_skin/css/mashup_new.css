@@ -100,7 +100,10 @@ input#openRSRequest1::before{
 /* test to remove "Request options" iframe header label since the button is removed now - 1/15/20 SBC */
 .iframeHeaderContent>em{
   display: none;
+  margin: 0px;
+  padding: 0px;
 }
+
 /* Request Form
    ExL forces the action buttons to the far right.  This is dumb, and we undo it. 
    Selection-Rule copied from line 1101, and CSS modified to not play games with the margin.
