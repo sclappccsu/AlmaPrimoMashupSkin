@@ -93,7 +93,7 @@ input#openRSRequest1 {
   text-transform: capitalize;
   /* margin-right: 5px; */
 }
-input#openRSRequest1::before{
+input#openRSRequest1:before,input#openRSRequest1::before{
   white-space: pre;  
   content: '<br>';
 }
