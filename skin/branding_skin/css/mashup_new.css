@@ -195,3 +195,16 @@ span.itemLocationName:before {
   color:#004D66;
   background-color: #EFEFEF;
 }
+/* Cancel button for request form */
+.resetContainer a {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: .5em 1em;
+  border-radius: 3px;
+  color: #333;
+  text-transform: uppercase;
+}
+.resetContainer a:hover {
+  background-color: #e4e4e4;
+  color: black;
+}
