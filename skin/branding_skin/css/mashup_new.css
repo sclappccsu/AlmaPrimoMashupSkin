@@ -203,8 +203,10 @@ span.itemLocationName:before {
   border-radius: 3px;
   color: #333;
   text-transform: uppercase;
+  background-color:#005C7A;
+  color: #fff;
 }
 .resetContainer a:hover {
-  background-color: #e4e4e4;
-  color: black;
+  color:#004D66;
+  background-color: #EFEFEF;
 }
