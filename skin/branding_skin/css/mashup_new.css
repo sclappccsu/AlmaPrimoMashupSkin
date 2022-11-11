@@ -1,0 +1,195 @@
+
+/* Local customizations for CSCU (Connecticut State Colleges and Universities):
+   Note: ExLibris recommends that you download a fresh new copy of the CSS mashup file EACH AND EVERY TIME
+         that you apply a new change, so that you always get the most current version. 
+         You can use your NZ account for the General Configuration Menu -> Delivery System Skins screen. 
+   AUDIT TRAIL 
+   01. 12/19/2016 MGH, Make the Request link look more like a call-to-action button. 
+   02. 12/29/2016 MGH, Modify Request form so that its action buttons are allowed to be on the left.
+   03. 01/04/2017 MGH, Decrease the amount of left padding for the entire IFrame body.
+   04. 01/30/2017 MGH, Additional rules to style the Request link (now a call-to-action button) when more than one exists.
+   05. 04/05/2018 MGH, Re-write the selector rule for the Request form button row so that it is no longer overruled.
+   06. 12/27/2018 SBC, per MGH's 12/24/18 email
+   07. 12/27/2018 SBC, to fix the lost CCSU-specific color styling for iframeHeaderContent input.requestOption
+   08. 01/14/2019 SBC, to add some styling to better highlight the stack and call numbers
+   09. 01/15/2020 SBC, to fix up for AFN per work with KF on styling - wanting Request from CT Colleges & Universities, line break, then ILLiad as just a link
+   10. 01/15/2020 SBC, test to remove "Request options" iframe header label since the button is removed now
+   11. 11/10/2022 SBC, to make sure works for the Request from another library article resource sharing link, also fixed the :hover to also have :focus for accessibility
+
+*/ 
+
+/* Request Link 
+   Make the Request link(s) a more prominent call-to-action.
+*/
+.iframeHeaderContent input.requestOption {
+  background-color: #008CBA; /* changed for CCSU from consortium color (#fffcc4) to local brand color */
+  border: none;
+  border-radius: 4px;
+  color: #fff;  /* changed for CCSU from consortium color (#5cb85c) to local brand color, higher contrast */
+  cursor: pointer;
+  padding: 1em;
+  text-transform: uppercase;
+  margin-right: 1em;
+}
+
+.iframeHeaderContent input.requestOption:first-of-type {
+  padding-left: 1em; /* Override the left-justification of first item */
+}
+
+.iframeHeaderContent input.requestOption:hover, .iframeHeaderContent input.requestOption:focus {
+  background-color: #f5fcff; /* was rgba(51,51,51,0.1) */
+  color: #008CBA; 
+  border: 1px solid #008CBA;
+  box-shadow: 0 0 0 1px #efefef inset;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.requestOption:active{
+  background-color: #EFEFEF;
+  color: #008CBA;
+  border: 1px solid #006687;
+  box-shadow: 0 0 0 1px #efefef inset;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.iframeHeaderContent input.submitAsLink.requestOption.popout {
+  padding-right: 1em;  /* undo the reduced padding when popout is following */
+  margin-right: 0.2em; /* reduced space when a popout is following */
+}
+
+.iframeHeaderContent input.submitAsLink.requestOption:not(:first-of-type) {
+  border-left: medium none; /* undo the separator bar */
+}
+/* edits for AFN */
+input#openRSAlmaRequest {
+    background-color: #008CBA;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    padding: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-right: 5px;
+    cursor: pointer;
+}
+input#openRSAlmaRequest:hover, #openRSAlmaRequest:focus, #openRSAlmaRequest:active{
+  background-color: #f5fcff;
+  color: #008CBA;
+  border: 1px solid #008CBA;
+  box-shadow: 0 0 0 1px #efefef inset;
+  border-radius: 4px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-right: 5px;
+  -webkit-box-shadow: 0px 3px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 3px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+}
+input#openRSRequest1 {
+  background-color: transparent;
+  border-radius: 4px;
+  border: 0px;
+  color: #007095;
+  cursor: pointer;
+  /* padding: 12px; */
+  text-transform: capitalize;
+  /* margin-right: 5px; */
+}
+input#openRSRequest1:before,input#openRSRequest1::before{
+  white-space: pre;  
+  content: '<br>';
+}
+/* test to remove "Request options" iframe header label since the button is removed now - 1/15/20 SBC */
+.iframeHeader.getit.iframeHeaderContent{
+  display: none !important;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Request Form
+   ExL forces the action buttons to the far right.  This is dumb, and we undo it. 
+   Selection-Rule copied from line 1101, and CSS modified to not play games with the margin.
+   Selection-Rule copied from line 1063, and CSS modified to allow buttons to fall on left.
+*/ 
+.holdRequest .resetContainer {
+  position: static;
+  margin-left: 0;
+  margin-top: 0;
+}
+#formActionsContainer {
+  flex-direction: row; /* Allow buttons to fall on the left */
+}
+
+/* Decrease the huge left padding for the frame. */
+body {
+  padding-left: 1em;
+}
+
+.holdRequest .resetContainer {
+  position: static;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.requestForm .resetContainer {
+  position: static;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+/* All done.  If editing, remember to augment the Audit Trail.*/
+/* new addition testing from SBC on 01/14/19 */
+span.itemLocationName {
+   font-weight: bold;
+   background-color: #f0f8ff;
+   position: relative;
+   left: 10px;
+   word-spacing: 1.5px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+}
+
+span.itemAccessionNumber {
+   background-color: #fffcc4;
+   left: 10px;
+   position: relative;
+   word-spacing: 1.5px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+}
+
+span.itemAccessionNumber:before {
+  white-space: pre;  
+  content: '\A Call #: ';
+   /* left: 1em; */
+   /* padding: 3px; */
+}
+
+span.itemLocationName:before {
+   content: '\A ';
+   display: block;
+}
+/* noticed issues with the color of 'buttons' in Request form when using Request from another library - SBC 11/11/22 */
+.actionsInputButtons[type="submit"], [type="submit"]#submitILLRequest, [type="submit"]#submitPurchaseRequest, [type="submit"]#exlidRequestTabFormSubmit, #formActionsContainer input[type="submit"] {
+  color: #198a19;
+  font-size: 1.2em;
+}
+.actionsInputButtons, #submitILLRequest, #submitPurchaseRequest, #exlidRequestTabFormSubmit, #formActionsContainer input {
+  box-shadow: none !important;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: .5em 1em;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.actionsInputButtons[type="submit"]:hover, [type="submit"]#submitILLRequest:hover, [type="submit"]#submitPurchaseRequest:hover, [type="submit"]#exlidRequestTabFormSubmit:hover, #formActionsContainer input[type="submit"]:hover {
+  background-color: rgba(25, 138, 25, 0.12);
+}
