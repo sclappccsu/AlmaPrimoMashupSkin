@@ -14,6 +14,8 @@
    08. 01/14/2019 SBC, to add some styling to better highlight the stack and call numbers
    09. 01/15/2020 SBC, to fix up for AFN per work with KF on styling - wanting Request from CT Colleges & Universities, line break, then ILLiad as just a link
    10. 01/15/2020 SBC, test to remove "Request options" iframe header label since the button is removed now
+   11. 11/10/2022 SBC, to make sure works for the Request from another library article resource sharing link, also fixed the :hover to also have :focus for accessibility
+
 */ 
 
 /* Request Link 
@@ -34,16 +36,22 @@
   padding-left: 1em; /* Override the left-justification of first item */
 }
 
-.iframeHeaderContent input.requestOption:hover {
+.iframeHeaderContent input.requestOption:hover, .iframeHeaderContent input.requestOption:focus {
   background-color: #f5fcff; /* was rgba(51,51,51,0.1) */
   color: #008CBA; 
   border: 1px solid #008CBA;
   box-shadow: 0 0 0 1px #efefef inset;
-  color: #008CBA;
-  border-radius: 3px;
+  border-radius: 4px;
   font-weight: bold;
 }
-
+.requestOption:active{
+  background-color: #EFEFEF;
+  color: #008CBA;
+  border: 1px solid #006687;
+  box-shadow: 0 0 0 1px #efefef inset;
+  border-radius: 4px;
+  font-weight: bold;
+}
 .iframeHeaderContent input.submitAsLink.requestOption.popout {
   padding-right: 1em;  /* undo the reduced padding when popout is following */
   margin-right: 0.2em; /* reduced space when a popout is following */
@@ -65,7 +73,7 @@ input#openRSAlmaRequest {
     margin-right: 5px;
     cursor: pointer;
 }
-input#openRSAlmaRequest:hover {
+input#openRSAlmaRequest:hover, #openRSAlmaRequest:focus, #openRSAlmaRequest:active{
   background-color: #f5fcff;
   color: #008CBA;
   border: 1px solid #008CBA;
@@ -167,4 +175,3 @@ span.itemLocationName:before {
    content: '\A ';
    display: block;
 }
-
