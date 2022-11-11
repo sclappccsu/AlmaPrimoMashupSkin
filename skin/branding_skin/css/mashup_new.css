@@ -176,9 +176,10 @@ span.itemLocationName:before {
    display: block;
 }
 /* noticed issues with the color of 'buttons' in Request form when using Request from another library - SBC 11/11/22 */
+/* tested the color contrast for accessibility & the fg of #004D66 (dark blue/teal) with #EFEFEF (light silver) bg is high contrast - or the lighter teal blue of #005C7A with the #FFF (white) works also, see https://webaim.org/resources/contrastchecker/ */
 .actionsInputButtons[type="submit"], [type="submit"]#submitILLRequest, [type="submit"]#submitPurchaseRequest, [type="submit"]#exlidRequestTabFormSubmit, #formActionsContainer input[type="submit"] {
-  color: #008CBA;
-  font-size: 1.2em;
+  background-color:#005C7A;
+  color: #fff;
 }
 .actionsInputButtons, #submitILLRequest, #submitPurchaseRequest, #exlidRequestTabFormSubmit, #formActionsContainer input {
   box-shadow: none !important;
@@ -190,6 +191,7 @@ span.itemLocationName:before {
   border-radius: 3px;
   cursor: pointer;
 }
-.actionsInputButtons[type="submit"]:hover, [type="submit"]#submitILLRequest:hover, [type="submit"]#submitPurchaseRequest:hover, [type="submit"]#exlidRequestTabFormSubmit:hover, #formActionsContainer input[type="submit"]:hover {
-  background-color: rgba(25, 138, 25, 0.12);
+.actionsInputButtons[type="submit"]:hover, [type="submit"]#submitILLRequest:hover, [type="submit"]#submitPurchaseRequest:hover, [type="submit"]#exlidRequestTabFormSubmit:hover, #formActionsContainer input[type="submit"]:hover,.actionsInputButtons[type="submit"]:focus, [type="submit"]#submitILLRequest:focus, [type="submit"]#submitPurchaseRequest:focus, [type="submit"]#exlidRequestTabFormSubmit:focus, #formActionsContainer input[type="submit"]:focus {
+  color:#004D66;
+  background-color: #EFEFEF;
 }
