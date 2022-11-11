@@ -177,7 +177,7 @@ span.itemLocationName:before {
 }
 /* noticed issues with the color of 'buttons' in Request form when using Request from another library - SBC 11/11/22 */
 .actionsInputButtons[type="submit"], [type="submit"]#submitILLRequest, [type="submit"]#submitPurchaseRequest, [type="submit"]#exlidRequestTabFormSubmit, #formActionsContainer input[type="submit"] {
-  color: #198a19;
+  color: #008CBA;
   font-size: 1.2em;
 }
 .actionsInputButtons, #submitILLRequest, #submitPurchaseRequest, #exlidRequestTabFormSubmit, #formActionsContainer input {
